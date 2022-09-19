@@ -1,0 +1,20 @@
+#rectangle{
+    width: 1920px;
+    height:120px;
+    background:rgb(0, 0, 0);
+}
+
+.blink { 
+    animation: blink infinite 1s 0s;  
+  }  
+  @keyframes blink { 
+    0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+  } 
