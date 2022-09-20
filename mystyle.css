@@ -4,6 +4,10 @@
     background:rgb(0, 0, 0);
 }
 
+img {
+  border: 7px solid black;
+}
+
 .blink { 
     animation: blink infinite 1s 0s;  
   }  
