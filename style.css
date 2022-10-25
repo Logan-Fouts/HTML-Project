@@ -1,0 +1,92 @@
+center {
+    color: white; 
+    position: relative; 
+    top: -95; 
+    font-size: 50px;
+}
+
+.rect {
+    position: relative; 
+    top: -10; 
+    left: -2;
+    background-color: #2c2c2c;
+    width: 100%;
+    height: 100px;
+    border: 2px solid black
+}
+
+.page {
+    background-color: #2e3435; 
+    border: 3px solid black;
+}
+
+
+.ShowInstructions {
+    background-color: #2c2c2c;
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    top: 13px;
+    left: 1050px;
+    background-image: linear-gradient(to right, transparent 50%, #4c940b 50%);
+    background-size: 200%;
+    background-position: 0%;
+    border-radius: 8px;
+    transition: .5s;
+}
+
+.ShowInstructions:hover {
+    background-position: 100%;
+}
+
+.Search {
+    background-color: #2c2c2c;
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    top: 13px;
+    left: 950px;
+    background-image: linear-gradient(to right, transparent 50%, #4c940b 50%);
+    background-size: 200%;
+    background-position: 0%;
+    border-radius: 8px;
+    transition: .5s;
+}
+
+.Search:hover {
+    background-position: 100%;
+}
+
+
+#input-pos {
+    position:fixed; 
+    top:122px; left:225px;
+}
+
+#inputID {
+    color:#b7b9ac; 
+    background-color: #2e3435;
+}
+
+#main {
+    font-size:160%; 
+    font-weight: bold; 
+    position: relative; 
+    top: -80px;
+}
+
+#console {
+    color:#4c940b;
+}
+
+#one {
+    color:#b7b9ac;
+}
+
+#two {
+    color:#33639d;
+}
+
+#three {
+    color:#b7b9ac;
+}

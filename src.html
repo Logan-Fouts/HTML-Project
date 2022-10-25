@@ -1,16 +1,20 @@
 <!DOCUMENT html>
-    <html style="background-color: #2e3435; border:rgb(0, 0, 0);">
+    <link rel="stylesheet" href="style.css">
+    <html class="page">
         <title>
             Logan Fouts CS Blog
         </title>
         <h1>
-            <svg width="5000" height="100" style="position: relative; top: -8px;">
-                <rect width=100% height=100% style="fill:#2c2c2c; stroke-width:5; stroke:black" />
-            </svg>
-            <center style="color: white; position: relative; top: -90; font-size: 50px;">
+            <div class="rect"></div>
+            <center>
                 My Terminal: ~
             </center>
+            <div class="head">
+                <button class="ShowInstructions"></button>
+                <button class="Search"></button>
+            </div>
         </h1>
+            <!--The logic of the terminal-->
             <script>
                 var i = 0;
                 function doEvent() { 
@@ -27,90 +31,69 @@
                         const containerDiv = document.getElementById("main");
                         containerDiv.appendChild(newP);
                         makeTerminalHead();
-                        i = i + 1;                                                              // All posts to cat
-                    } else if (a.value == "cat HowItBegan.post") {                                        // Post 1
-                        const newP = document.createElement("p");
-                        const pContent = createImageNode("Images/IMG_6429.jpg");
-                        newP.appendChild(pContent);
-                        const containerDiv = document.getElementById("main");
-                        containerDiv.appendChild(newP);
-                        const newD = document.createElement("d");
-                        const dContent = createTextNode("It all began when I stumbled across a NetworkChuck youtube video titled"
-                        + "You need a NAS RIGHT NOW! Not knowing what a NAS is but recognizing some sort of storage device, thanks"
-                        + "to LinusTechTips Petabyte Project, I watched the video. After some quick research, I found the OS TrueNas"
-                        + "Core which is a Freebsd-based operating system that is totally free and allows for NAS configuration of" 
-                        + "normal computer hardware. Long story short I used old hardware I had laying around, installed FreeNAS on"
-                        + "a thumb drive, and booted it on the spare parts computer.")
-                        dContent.style.fontSize = '20px';
-                        dContent.style.color = "#b7b9ac";
-                        dContent.style.position = "relative";
-                        dContent.style.left = "10px";
-                        containerDiv.appendChild(dContent);
-
-                        addBreaks();
-                        makeTerminalHead();
+                        i = i + 1;                                                             // All posts to view
+                    } else if (a.value == "cat HowItBegan.post") {                             // Post 1
+                        var imagePath = "Images/IMG_6429.jpg";
+                        var paragraph = "It all began when I stumbled across a NetworkChuck youtube video titled"
+                            + "You need a NAS RIGHT NOW! Not knowing what a NAS is but recognizing some sort of storage device, thanks"
+                            + "to LinusTechTips Petabyte Project, I watched the video. After some quick research, I found the OS TrueNas"
+                            + "Core which is a Freebsd-based operating system that is totally free and allows for NAS configuration of" 
+                            + "normal computer hardware. Long story short I used old hardware I had laying around, installed FreeNAS on"
+                            + "a thumb drive, and booted it on the spare parts computer.)";
+                        createPost(imagePath, paragraph);
                         i = i + 4;
-                    } else if (a.value == "cat RPI.post") {                                        // Post 2
-                        const newP = document.createElement("p"); 
-                        const pContent = createImageNode("Images/Raspberry-Pi-Wallpapers-Wallpaper-Cave.jpg");
-                        newP.appendChild(pContent);
-                        const containerDiv = document.getElementById("main");
-                        containerDiv.appendChild(newP);
-                        const newD = document.createElement("d");
-                        const dContent = createTextNode("I’m aware that I am severely underutilizing my Raspberry Pi; however, I have not had" 
-                        + "it long at this point. Right now it is simply" 
-                        + "used as an OpenVPN server because I am at college most of the time I needed a way to access my data. I originally used port" 
-                        + "forwards to ssh into what I needed, and locally access even the TrueNasCore web GUI. But, this left me feeling worried about my" 
-                        + "home network getting hacked. So after a short amount of time, I found that I could run a VPN on the Raspberry Pi. I referenced a" 
-                        + "guide on how to install it (the guide) and this process helped to further my small level of understanding of command-line."
-                        + "(If you have any suggestions for what else I should use it for, leave a comment)");
-                        dContent.style.fontSize = '20px';
-                        dContent.style.color = "#b7b9ac";
-                        dContent.style.position = "relative";
-                        dContent.style.left = "10px";
-                        containerDiv.appendChild(dContent);
-
-                        addBreaks();
-                        makeTerminalHead();
+                    } else if (a.value == "cat RPI.post") {                                     // Post 2
+                        var imagePath = "Images/Raspberry-Pi-Wallpapers-Wallpaper-Cave.jpg";
+                        var paragraph = "I am aware that I am severely underutilizing my Raspberry Pi; however, I have not had" 
+                            + "it long at this point. Right now it is simply" 
+                            + "used as an OpenVPN server because I am at college most of the time I needed a way to access my data. I originally used port" 
+                            + "forwards to ssh into what I needed, and locally access even the TrueNasCore web GUI. But, this left me feeling worried about my" 
+                            + "home network getting hacked. So after a short amount of time, I found that I could run a VPN on the Raspberry Pi. I referenced a" 
+                            + "guide on how to install it (the guide) and this process helped to further my small level of understanding of command-line."
+                            + "(If you have any suggestions for what else I should use it for, leave a comment)";
+                        createPost(imagePath, paragraph);
                         i = i + 4;
-                    } else if (a.value == "cat post3") {                                        // Post 3
+                    } else if (a.value == "cat post3") { 
+                        var imagePath;                                                          // Post 3
+                        var paragraph;
+                        createPost(imagePath, paragraph);
                         i = i + 4;
                     } else if (a.value == "cat post4") {                                        // Post 4
+                        var imagePath;                                                          
+                        var paragraph;
+                        createPost(imagePath, paragraph);
                         i = i + 4;
-                    } else if (a.value == "cd simple_website") {
+                    } else if (a.value == "cd Simple_Website") {
                         open("https://csgobrrrr.wordpress.com");
                     }
                 }  
-            </script>
-            <script>
+    
+                // Creates the terminal prompt after every command.
                 function makeTerminalHead() {
                     const containerDiv = document.getElementById("main");
                     const lContent = createTextNode("\xA0 logan@lfouts");
                     lContent.style.color = "#4c940b";
                     containerDiv.appendChild(lContent);
-
                     const cContent = createTextNode("\xA0 :");
                     cContent.style.color = "#b7b9ac";
                     containerDiv.appendChild(cContent);
-
                     const tContent = createTextNode("~");
                     tContent.style.color = "#33639d";
                     containerDiv.appendChild(tContent);
-
                     const dContent = createTextNode("$");
                     dContent.style.color = "#b7b9ac";
                     containerDiv.appendChild(dContent);
                 }
-            </script>
-            <script>
-                function addBreaks() {                                                          // Adds 2 new line characters
+            
+                // Adds 2 new line characters.
+                function addBreaks() {                                                          
                     const containerDiv = document.getElementById("main");
                     containerDiv.appendChild(document.createElement("br"));
                     containerDiv.appendChild(document.createElement("br"));
                 }
-            </script>
-            <script>
-                function createImageNode(String) {                                              // Creates an image Node to append
+            
+                // Creates an image Node to append.
+                function createImageNode(String) { 
                     var img = document.createElement('img'); 
                     img.src = String;
                     img.style.height = '500px';
@@ -120,21 +103,41 @@
                     img.style.border = "5px solid black";
                     return img;
                 }
-            </script>
-            <script>
-                function createTextNode(String) {                                               // Creates an Text Node to append
+                
+                // Creates an Text Node to append.
+                function createTextNode(String) {                                               
                     const newZ = document.createElement("z");
                     const zContent = document.createTextNode(String);
                     newZ.appendChild(zContent);
                     return newZ;
                 }
+
+                 // Creates a new post and appends it.
+                function createPost(imagePath, paragraph) {                                     
+                    const newP = document.createElement("p");
+                    const pContent = createImageNode(imagePath);
+                    newP.appendChild(pContent);
+                    const containerDiv = document.getElementById("main");
+                    containerDiv.appendChild(newP);
+                    const newD = document.createElement("d");
+                    const dContent = createTextNode(paragraph);
+                    dContent.style.fontSize = '20px';
+                    dContent.style.color = "#b7b9ac";
+                    dContent.style.position = "relative";
+                    dContent.style.left = "10px";
+                    containerDiv.appendChild(dContent);
+                    addBreaks();
+                    makeTerminalHead();
+                }
+           
             </script>
         <body>
-            <div id="main" style="font-size:160%; font-weight: bold; position: relative; top: -80px;">
-                <p id="console" style="color:#4c940b;"> &nbsp logan@lfouts
-                    <a style="color:#b7b9ac">:<a style="color:#33639d">~<a style="color:#b7b9ac">$</a></a></a>
-                    <div style="position:fixed; top:116px; left:210px;">
-                        <input size="100" style="color:#b7b9ac; background-color: #2e3435;" type="search" id="inputID" onsearch="doEvent();" />
+            <!-- Makes the first Elements and elements are appended here. -->
+            <div id="main"> 
+                <p id="console"> &nbsp logan@lfouts  
+                    <a id="one">:<a id="two">~<a id="three">$</a></a></a>     
+                    <div id="input-pos">
+                        <input id="inputID" size="100" type="search" onsearch="doEvent();" />
                     </div>
                 </p>
             </div>
