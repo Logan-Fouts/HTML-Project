@@ -7,7 +7,7 @@
         <h1>
             <div class="rect"></div>
             <center>
-                My Terminal: ~
+                Blog Terminal: ~
             </center>
             <div class="head">
                 <button class="ShowInstructions"></button>
@@ -19,11 +19,11 @@
                 var i = 0;
                 function doEvent() { 
                     var a = document.getElementById("inputID");
-                    if (i >= 8 || a.value == "clear") {                                         // If the page is too long or user types clear, reload page
+                    if (i >= 8 || a.value == "clear") {                                        // If the page is too long or user types clear, reload page
                         location.reload(true);
                         console.log("Terminal Too Long Reloading");
                     }
-                    if (a.value == "ls") {                                                      // User types ls to list posts
+                    if (a.value == "ls") {                                                     // User types ls to list posts
                         const newP = document.createElement("p");
                         const pContent = document.createTextNode("\xA0 \xA0 HowItBegan.post \xA0 RPI.post \xA0 Post3.post \xA0 Post4.post \xA0 Simple_Website");
                         newP.appendChild(pContent);
@@ -129,10 +129,9 @@
                     addBreaks();
                     makeTerminalHead();
                 }
-           
             </script>
+        <!-- Makes the first Elements and elements are appended here. -->
         <body>
-            <!-- Makes the first Elements and elements are appended here. -->
             <div id="main"> 
                 <p id="console"> &nbsp logan@lfouts  
                     <a id="one">:<a id="two">~<a id="three">$</a></a></a>     
