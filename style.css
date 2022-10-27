@@ -1,7 +1,8 @@
 /*Defines all the style elements for the html.*/
 center {
     color: white; 
-    position: relative; 
+    position: relative;
+    align-content: center; 
     top: -95; 
     font-size: 50px;
 }

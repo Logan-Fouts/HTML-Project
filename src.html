@@ -12,7 +12,7 @@
             </center>
             <div class="head">
                 <button class="ShowInstructions"></button>
-                <button class="Search"></button>
+                <button class="Search" onclick="getInstructions()"></button>
             </div>
         </h1>
             <!--The logic of the terminal-->
@@ -68,6 +68,13 @@
                         open("https://csgobrrrr.wordpress.com");
                     }
                 }  
+
+                function getInstructions() {
+                    var imagePath = "Images/hannah-montana-linux.webp";
+                    var paragraph = "So I See You Need Instructions ;) \xA0 \xA0 -To List All Items Type: ls \xA0 \xA0 -To View A Post Type: cat <postname>"
+                        + "\xA0 \xA0 -To Go To My Normal Website Type: cd Simple_Website";
+                    createPost(imagePath, paragraph);
+                }
     
                 // Creates the terminal prompt after every command.
                 function makeTerminalHead() {
@@ -89,7 +96,6 @@
                 // Adds 2 new line characters.
                 function addBreaks() {                                                          
                     const containerDiv = document.getElementById("main");
-                    containerDiv.appendChild(document.createElement("br"));
                     containerDiv.appendChild(document.createElement("br"));
                 }
             
@@ -127,6 +133,7 @@
                     dContent.style.position = "relative";
                     dContent.style.left = "10px";
                     containerDiv.appendChild(dContent);
+                    addBreaks();
                     addBreaks();
                     makeTerminalHead();
                 }
