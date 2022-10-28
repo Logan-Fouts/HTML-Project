@@ -59,6 +59,10 @@ center {
     background-position: 100%;
 }
 
+.magGlass {
+    width: 50;
+}
+
 
 #input-pos {
     position:fixed; 
