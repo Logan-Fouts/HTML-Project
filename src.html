@@ -26,7 +26,7 @@
                     }
                     if (a.value == "ls") {                                                     // User types ls to list posts
                         const newP = document.createElement("p");
-                        const pContent = document.createTextNode("\xA0 \xA0 HowItBegan.post \xA0 RPI.post \xA0 Post3.post \xA0 Post4.post \xA0 Simple_Website");
+                        const pContent = document.createTextNode("\xA0 \xA0 HowItBegan.post \xA0 RPI.post \xA0 How2Linux.post \xA0 Post4.post \xA0 Simple_Website");
                         newP.appendChild(pContent);
                         newP.style.color = "#33639d";
                         const containerDiv = document.getElementById("main");
@@ -54,9 +54,15 @@
                             + "(If you have any suggestions for what else I should use it for, leave a comment)";
                         createPost(imagePath, paragraph);
                         i = i + 4;
-                    } else if (a.value == "cat post3") { 
-                        var imagePath;                                                          // Post 3
-                        var paragraph;
+                    } else if (a.value == "cat How2Linux.post") { 
+                        var imagePath = "Images/tux.png"                                                        // Post 3
+                        var paragraph = "While trying to use my FreeNas Server and Raspberry Pi I realized I need to be able to navigate Linux because both OS’s"
+                            + "are based on it (TrueNAS is not but its similar). I tried watching a few youtube videos covering the basics and quickly the basics" 
+                            + "were basic. I can navigate the file system, create files, and edit them. However, this is kinda it. I find trying to install any"
+                            + "software very confusing and always need some sort of guide on it. So, I need a way to force myself to learn it, and the way I am"
+                            + "trying is also a solution to a problem I had. When I wanted to use anything on my server besides the Plex Server, I had to be on"
+                            + "my home’s very bad network. To solve this, I installed a Linux VM running Ubuntu 20.04 using VirtualBox and now use the VPN only"
+                            + "on that. Leaving my computer both using and not using my home’s internet.";
                         createPost(imagePath, paragraph);
                         i = i + 4;
                     } else if (a.value == "cat post4") {                                        // Post 4
@@ -64,8 +70,12 @@
                         var paragraph;
                         createPost(imagePath, paragraph);
                         i = i + 4;
-                    } else if (a.value == "cd Simple_Website") {
+                    } else if (a.value == "cd Simple_Website") {                                // Check for input errors
                         open("https://csgobrrrr.wordpress.com");
+                    } else if (a.value == ""){
+                        alert("Command Empty. Try Again");
+                    } else {
+                        alert("Invalid Linux Terminal Command! Click The Question Mark To Get Help")
                     }
                 }  
 
@@ -74,6 +84,7 @@
                     var paragraph = "So I See You Need Instructions ;) \xA0 \xA0 -To List All Items Type: ls \xA0 \xA0 -To View A Post Type: cat <postname>"
                         + "\xA0 \xA0 -To Go To My Normal Website Type: cd Simple_Website";
                     createPost(imagePath, paragraph);
+                    i = i + 4;
                 }
     
                 // Creates the terminal prompt after every command.
